@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top, #87ceeb, #ffffff); /* sky blue gradient */
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 250px;
+  background: linear-gradient(to bottom, #c2f0c2, #ffffff); /* soft ground color */
+  border: 2px solid #333;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 2000px;
+  height: 20px;
+  background: repeating-linear-gradient(
+    to right,
+    #555,
+    #555 40px,
+    #666 40px,
+    #666 80px
+  );
+  animation: moveGround 1s linear infinite;
+}
+
+@keyframes moveGround {
+  0% { left: 0; }
+  100% { left: -1000px; }
+}
+
+.hole {
+  position: absolute;
+  bottom: 0;
+  background: #c2f0c2; /* same as ground */
+  height: 20px;
+}
+
+#boy {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  width: 90px;   /* boy size bada kiya */
+  height: 90px;  /* boy size bada kiya */
+  transition: bottom 0.05s;
+}
+
+#score, #highScore {
+  position: absolute;
+  top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#score { right: 20px; }
+#highScore { left: 20px; }
